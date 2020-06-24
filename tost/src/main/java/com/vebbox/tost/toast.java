@@ -49,5 +49,8 @@ public class toast {
                 });
 
         // executing the quere to get the json information
-        queue.add(request);}
+        queue.add(request);
+    Toast.makeText(c,"t",Toast.LENGTH_SHORT).show();
+    }
+
 }
