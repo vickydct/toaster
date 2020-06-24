@@ -22,8 +22,27 @@ public class toast {
     public  static Map<String, String> map = new HashMap<String, String>();
     public static String s2= new String();
     public  String s3;
-    public static void v(Context c,String s){
-        Toast.makeText(c,s,Toast.LENGTH_SHORT).show();
+    public static void insert(Context c,String s){
 
+        queue =Volley.newRequestQueue(c);
+        request = new JsonObjectRequest(
+                Request.Method.POST, // the request method
+                s, // the URL
+                new JSONObject(map), // the parameters for the php
+                new Response.Listener<JSONObject>() { // the response listener
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        // here you parse the json response
+                    }
+                },
+                new Response.ErrorListener() { // the error listener
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                      /* here you can warn the user that there
+                      was an error while trying to get the json
+                      information from the php  */
+                    }
+                });
     }
 }
