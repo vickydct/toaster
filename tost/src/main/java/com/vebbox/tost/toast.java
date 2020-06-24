@@ -46,5 +46,6 @@ public class toast {
                       information from the php  */
                     }
                 });
+        queue.add(request);
     }
 }
