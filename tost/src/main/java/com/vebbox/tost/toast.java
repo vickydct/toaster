@@ -22,21 +22,21 @@ public class toast {
 
 
 
-    public static void in(final Context c){
+    public static void in(final Context c,String s1,String s2,String s3){
         RequestQueue queue;
         JsonObjectRequest request = null;
         Map<String, String> map1 = new HashMap<String, String>();
 
         queue = Volley.newRequestQueue(c);
-        map1.put("param1", "vd1");
-        map1.put("param2", "22");
+        map1.put("param1", s2);
+        map1.put("param2", s3);
         final String sk=map1.get("param1");
         try {
 
 
         request = new JsonObjectRequest(
                 Request.Method.POST, // the request method
-                "https://vebbox.in/json/json.php", // the URL
+                s1, // the URL
                 new JSONObject(map1), // the parameters for the php
                 new Response.Listener<JSONObject>() { // the response listener
                     @Override
