@@ -57,14 +57,14 @@ public class toast {
         }
         catch (Exception e1){
             Log.e("e", String.valueOf(e1));
-            Toast.makeText(c,sk,Toast.LENGTH_SHORT).show();
+            Toast.makeText(c,sk+"ddddddd",Toast.LENGTH_SHORT).show();
         }
 
 
 
         // executing the quere to get the json information
         queue.add(request);
-
+        Toast.makeText(c,sk+"sssssss",Toast.LENGTH_SHORT).show();
     }
 
 }
