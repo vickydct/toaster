@@ -21,7 +21,7 @@ public class toast {
     public static JsonObjectRequest request;
     public  static Map<String, String> map = new HashMap<String, String>();
     public static String s2= new String();
-    public static String s3;
+    public  String s3;
     public static void v(Context c,String s){
         Toast.makeText(c,s,Toast.LENGTH_SHORT).show();
 
