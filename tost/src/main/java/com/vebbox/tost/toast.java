@@ -17,10 +17,10 @@ import java.util.Map;
 import android.widget.Toast;
 
 public class toast {
-    RequestQueue queue;
-    JsonObjectRequest request;
-    Map<String, String> map = new HashMap<String, String>();
-String s2;
+    public RequestQueue queue;
+    public JsonObjectRequest request;
+    public Map<String, String> map = new HashMap<String, String>();
+    public  String s2,s3;
     public static void v(Context c,String s){
         Toast.makeText(c,s,Toast.LENGTH_SHORT).show();
 
