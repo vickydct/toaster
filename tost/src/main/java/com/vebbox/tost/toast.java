@@ -21,14 +21,14 @@ public class toast {
 
 
 
-    public static void insert(){
+    public static void insert(Context c){
 
        RequestQueue queue;
         JsonObjectRequest request;
         Map<String, String> map = new HashMap<String, String>();
 
         // the request queue
-        queue = Volley.newRequestQueue(this);
+        queue = Volley.newRequestQueue(c);
 
         // the parameters for the php
         // map.put(KEY, VALUE);
