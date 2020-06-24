@@ -20,7 +20,7 @@ public class toast {
     RequestQueue queue;
     JsonObjectRequest request;
     Map<String, String> map = new HashMap<String, String>();
-
+String s2;
     public static void v(Context c,String s){
         Toast.makeText(c,s,Toast.LENGTH_SHORT).show();
 
