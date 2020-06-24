@@ -17,19 +17,29 @@ import java.util.Map;
 import android.widget.Toast;
 
 public class toast {
-    public  static RequestQueue queue;
-    public static JsonObjectRequest request;
-    public  static Map<String, String> map = new HashMap<String, String>();
-    public static String s2= new String();
-    public  String s3;
-    public static void insert(Context c,String s,String s1,String s2){
 
-        map.put("param1", s1);
-        map.put("param2", s2);
-        queue =Volley.newRequestQueue(c);
+
+
+
+    public static void insert(){
+
+       RequestQueue queue;
+        JsonObjectRequest request;
+        Map<String, String> map = new HashMap<String, String>();
+
+        // the request queue
+        queue = Volley.newRequestQueue(this);
+
+        // the parameters for the php
+        // map.put(KEY, VALUE);
+        map.put("param1", " dssfdsfdsfds");
+        map.put("param2", "109");
+
+        // the JSON request
+        // JsonObjectRequest(METHOD, URL, JSONOBJECT(PARAMETERS), OK_LISTENER, ERROR_LISTENER);
         request = new JsonObjectRequest(
                 Request.Method.POST, // the request method
-                s, // the URL
+                "https://vebbox.in/json/json.php", // the URL
                 new JSONObject(map), // the parameters for the php
                 new Response.Listener<JSONObject>() { // the response listener
                     @Override
@@ -46,6 +56,8 @@ public class toast {
                       information from the php  */
                     }
                 });
+
+        // executing the quere to get the json information
         queue.add(request);
     }
 }
