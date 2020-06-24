@@ -1,6 +1,12 @@
 package com.vebbox.tost;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -14,34 +20,23 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-import android.widget.Toast;
-
-public class toast {
 
 
+public class insert {
+   public static RequestQueue queue;
+    public static JsonObjectRequest request;
+    public static Map<String, String> map1 = new HashMap<String, String>();
+
+    public static void in(Context c){
 
 
-    public static void insert(Context c){
-
-        Toast.makeText(c,"fff",Toast.LENGTH_SHORT).show();
-       RequestQueue queue;
-        JsonObjectRequest request;
-        Map<String, String> map = new HashMap<String, String>();
-
-        // the request queue
         queue = Volley.newRequestQueue(c);
-
-        // the parameters for the php
-        // map.put(KEY, VALUE);
-        map.put("param1", " dssfdsfdsfds");
-        map.put("param2", "109");
-
-        // the JSON request
-        // JsonObjectRequest(METHOD, URL, JSONOBJECT(PARAMETERS), OK_LISTENER, ERROR_LISTENER);
+        map1.put("param1", "vd");
+        map1.put("param2", "22");
         request = new JsonObjectRequest(
                 Request.Method.POST, // the request method
                 "https://vebbox.in/json/json.php", // the URL
-                new JSONObject(map), // the parameters for the php
+                new JSONObject(map1), // the parameters for the php
                 new Response.Listener<JSONObject>() { // the response listener
                     @Override
                     public void onResponse(JSONObject response) {
