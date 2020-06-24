@@ -17,7 +17,7 @@ import java.util.Map;
 import android.widget.Toast;
 
 public class toast {
-    public RequestQueue queue;
+    public static RequestQueue queue;
     public JsonObjectRequest request;
     public Map<String, String> map = new HashMap<String, String>();
     public  String s2,s3;
