@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 public class toast {
     public static RequestQueue queue;
-    public JsonObjectRequest request;
+    public static JsonObjectRequest request;
     public Map<String, String> map = new HashMap<String, String>();
     public  String s2,s3;
     public static void v(Context c,String s){
