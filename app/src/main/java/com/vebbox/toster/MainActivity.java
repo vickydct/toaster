@@ -1,19 +1,12 @@
 package com.vebbox.toster;
 
-import androidx.appcompat.app.AppCompatActivity;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONObject;
+import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
-import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,5 +15,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+       toast.in(MainActivity.this);
+
+//        Map<String, String> map1 = new HashMap<String, String>();
+//
+//
+//        map1.put("param1", "vd");
+//        map1.put("param2", "22");
+//
+//        String sq=map1.get("param1");
+//        Toast.makeText(this,sq,Toast.LENGTH_SHORT).show();
     }
 }
