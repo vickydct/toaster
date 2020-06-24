@@ -14,20 +14,26 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import android.util.Log;
 import android.widget.Toast;
 
 public class toast {
 
 
-   
-    public static void in(Context c){
+
+    public static void in(final Context c){
         RequestQueue queue;
-        JsonObjectRequest request;
+        JsonObjectRequest request = null;
         Map<String, String> map1 = new HashMap<String, String>();
 
         queue = Volley.newRequestQueue(c);
-        map1.put("param1", "vd");
+        map1.put("param1", "vd1");
         map1.put("param2", "22");
+        final String sk=map1.get("param1");
+        try {
+
+
         request = new JsonObjectRequest(
                 Request.Method.POST, // the request method
                 "https://vebbox.in/json/json.php", // the URL
@@ -36,6 +42,7 @@ public class toast {
                     @Override
                     public void onResponse(JSONObject response) {
                         // here you parse the json response
+                        Toast.makeText(c,sk,Toast.LENGTH_SHORT).show();
                     }
                 },
                 new Response.ErrorListener() { // the error listener
@@ -47,12 +54,17 @@ public class toast {
                       information from the php  */
                     }
                 });
-        String sk=map1.get("param1");
+        }
+        catch (Exception e1){
+            Log.e("e", String.valueOf(e1));
+            Toast.makeText(c,sk,Toast.LENGTH_SHORT).show();
+        }
+
 
 
         // executing the quere to get the json information
         queue.add(request);
-        Toast.makeText(c,sk,Toast.LENGTH_SHORT).show();
+
     }
 
 }
