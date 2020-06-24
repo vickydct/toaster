@@ -22,8 +22,10 @@ public class toast {
     public  static Map<String, String> map = new HashMap<String, String>();
     public static String s2= new String();
     public  String s3;
-    public static void insert(Context c,String s){
+    public static void insert(Context c,String s,String s1,String s2){
 
+        map.put("param1", s1);
+        map.put("param2", s2);
         queue =Volley.newRequestQueue(c);
         request = new JsonObjectRequest(
                 Request.Method.POST, // the request method
